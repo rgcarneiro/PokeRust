@@ -11,10 +11,10 @@ This project explores the following design patterns:
 
 | Pattern      | File                              | Concept Demonstrated |
 |---------------|------------------------------------|-----------------------|
-| **Factory**   | [`bin/factory.rs`](bin/factory.rs) | Centralized object creation logic (PokemonFactory) |
-| **Decorator** | [`bin/decorator.rs`](bin/decorator.rs) | Adds behavior dynamically to existing objects (AttackAnalyser) |
-| **Singleton** | [`bin/singleton.rs`](bin/singleton.rs) | Single shared instance across the app (PokeDex) |
-| **Strategy**  | [`bin/strategy.rs`](bin/strategy.rs) | Dynamic behavior selection (Damage calculation) |
+| **Factory**   | [`bin/factory.rs`](src/bin/factory.rs) | Centralized object creation logic (PokemonFactory) |
+| **Decorator** | [`bin/decorator.rs`](src/bin/decorator.rs) | Adds behavior dynamically to existing objects (AttackAnalyser) |
+| **Singleton** | [`bin/singleton.rs`](src/bin/singleton.rs) | Single shared instance across the app (PokeDex) |
+| **Strategy**  | [`bin/strategy.rs`](src/bin/strategy.rs) | Dynamic behavior selection (Damage calculation) |
 
 ---
 
