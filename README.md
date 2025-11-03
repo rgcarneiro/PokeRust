@@ -21,14 +21,14 @@ This project explores the following design patterns:
 ## Project Structure
 
 ```
-design_patterns_bench/
+pokerust/
 ├── src/
-│   └── lib.rs          # Core module with Pokemon definitions and behavior
-├── bin/
-│   ├── factory.rs      # Factory Pattern example
-│   ├── decorator.rs    # Decorator Pattern example
-│   ├── singleton.rs    # Singleton Pattern example
-│   └── strategy.rs     # Strategy Pattern example
+├── └── bin/
+    │   ├── factory.rs      # Factory Pattern example
+    │   ├── decorator.rs    # Decorator Pattern example
+    │   ├── singleton.rs    # Singleton Pattern example
+    │   └── strategy.rs     # Strategy Pattern example
+    │   └── lib.rs          # Core module with Pokemon definitions and behavior
 └── Cargo.toml
 ```
 
