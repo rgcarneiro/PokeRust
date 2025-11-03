@@ -1,2 +1,105 @@
-# PokeRust
-Studying design patterns in Rust using a Pokédex as a playful case study — each entry applies a different pattern with idiomatic Rust implementations.
+# Design Patterns Pokedex (Rust)
+
+**Design Patterns Pokedex** is a collection of Rust implementations showcasing classic software design patterns, modeled through a Pokémon-inspired Pokedex.  
+Each module demonstrates how a different pattern can be implemented using idiomatic Rust features such as traits, ownership, and type safety.
+
+---
+
+## Overview
+
+This project explores the following design patterns:
+
+| Pattern      | File                              | Concept Demonstrated |
+|---------------|------------------------------------|-----------------------|
+| **Factory**   | [`bin/factory.rs`](bin/factory.rs) | Centralized object creation logic (PokemonFactory) |
+| **Decorator** | [`bin/decorator.rs`](bin/decorator.rs) | Adds behavior dynamically to existing objects (AttackAnalyser) |
+| **Singleton** | [`bin/singleton.rs`](bin/singleton.rs) | Single shared instance across the app (PokeDex) |
+| **Strategy**  | [`bin/strategy.rs`](bin/strategy.rs) | Dynamic behavior selection (Damage calculation) |
+
+---
+
+## Project Structure
+
+```
+design_patterns_bench/
+├── src/
+│   └── lib.rs          # Core module with Pokemon definitions and behavior
+├── bin/
+│   ├── factory.rs      # Factory Pattern example
+│   ├── decorator.rs    # Decorator Pattern example
+│   ├── singleton.rs    # Singleton Pattern example
+│   └── strategy.rs     # Strategy Pattern example
+└── Cargo.toml
+```
+
+---
+
+## Running Examples
+
+Each design pattern can be executed separately:
+
+### Factory
+```bash
+cargo run --bin factory
+```
+
+### Decorator
+```bash
+cargo run --bin decorator
+```
+
+### Singleton
+```bash
+cargo run --bin singleton
+```
+
+### Strategy
+```bash
+cargo run --bin strategy
+```
+
+---
+
+## Core Concepts
+
+- Traits as Interfaces: All Pokémon share common behavior via the `PokemonActions` trait.  
+- Ownership and Lifetimes: Each Pokémon carries its own data safely across examples.  
+- Generics and Dynamic Dispatch: Patterns like Strategy and Decorator leverage trait objects (`dyn Trait`) for runtime polymorphism.  
+- Safe Concurrency: The Singleton uses `OnceLock` for safe, lazily-initialized global state.
+
+---
+
+## Example – Factory Pattern
+
+```rust
+let charmander = PokemonFactory::new_pokemon(PokemonType::Fire);
+charmander.fight();
+```
+
+Output:
+```
+Pokemon attacked with Blaze!
+```
+
+---
+
+## Example – Strategy Pattern
+
+```rust
+let fire_strategy = Box::new(FireDamage);
+let context = PokemonStrategyContext::new(fire_strategy);
+context.process_strategy(squirtle);
+```
+
+Output:
+```
+Very effective this Pokemon type.
+```
+
+---
+
+## Technologies
+
+- Language: Rust 1.80+  
+- Concepts: Design Patterns, Trait Objects, Ownership Model  
+- Focus: Clean, reusable architecture using idiomatic Rust
