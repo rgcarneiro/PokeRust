@@ -1,6 +1,8 @@
 # Design Patterns Pokedex (Rust)
 
-**Design Patterns Pokedex** is a collection of Rust implementations showcasing classic software design patterns, modeled through a Pokémon-inspired Pokedex.  
+*This is a work-in-progress, many many design changes still to be worked on as well as more patterns to be included.*
+
+Classic software design patterns case study, modeled through a Pokémon-inspired Pokedex.  
 Each module demonstrates how a different pattern can be implemented using idiomatic Rust features such as traits, ownership, and type safety.
 
 ---
@@ -90,16 +92,3 @@ let fire_strategy = Box::new(FireDamage);
 let context = PokemonStrategyContext::new(fire_strategy);
 context.process_strategy(squirtle);
 ```
-
-Output:
-```
-Very effective this Pokemon type.
-```
-
----
-
-## Technologies
-
-- Language: Rust 1.80+  
-- Concepts: Design Patterns, Trait Objects, Ownership Model  
-- Focus: Clean, reusable architecture using idiomatic Rust
